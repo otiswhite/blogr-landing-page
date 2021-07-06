@@ -1,0 +1,334 @@
+/* HEADER */
+.header {
+  background: $gradient-linear-red;
+  padding: 1.5rem;
+  display: grid;
+  overflow: hidden;
+  border-bottom-left-radius: 4rem;
+  width: 100%;
+
+  &_background-pattern {
+    width: 100%;
+    position: relative;
+
+    img {
+      position: absolute;
+      width: 100%;
+      transform: scale(3);
+
+      @media(min-width: 768px){
+        transform: scale(2.5) translateY(-10%);
+      }
+    }
+  }
+}
+
+.navbar {
+  // position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  width: 100%;
+  font-family: $font-overpass;
+
+  @media(min-width: 768px){
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    align-items: flex-start;
+  }
+  @media(min-width: 900px){
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    
+  }
+
+  &_toggle-input {
+    display: none;
+  }
+
+  &_toggle-label-ham {
+    display: block;
+    align-self: center;
+
+    @media(min-width: 768px){
+      display: none;
+    }
+
+  }
+
+  &_toggle-label-cross {
+    display: none;
+  }
+
+  &_toggle-input:checked ~ &_links {
+    transform: scale(1,1);
+    // opacity: 1;
+  }
+
+  &_toggle-input:checked ~ &_toggle-label-ham {
+    display: none;
+    transition: display 1s;
+  }
+
+  &_toggle-input:checked ~ &_toggle-label-cross {
+    display: block;
+    align-self: center;
+    transition: display 1s;
+
+  }
+
+  &_links {
+    position: absolute;
+    transform: scale(1, 0);
+    // opacity: 0;
+    background-color: $color-white;
+    top: 20%;
+    left: 5%;
+    width: 90%;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 1px 5px 10px $color-very-dark-black-blue;
+    border-radius: 0.5rem;
+
+    @media(min-width: 768px){
+      all: unset;
+      text-decoration: unset;
+      list-style: none;
+      color: $color-white;
+      display: flex;
+      // grid-template-columns: 1fr 1fr 1fr 2fr;
+      // position: absolute;
+      // margin-left: 150px;
+    }
+
+    .auth {
+      @media(min-width: 768px){
+        display: flex;
+        margin-left: 2rem;
+        margin-left: auto;
+
+        .login {
+        }
+      }
+    }
+
+
+    &_link {
+      margin: 1rem 0;
+      font-size: 1.2rem;
+      font-weight: bold;
+
+      
+
+      @media(min-width: 768px){
+        margin-left: 1rem;
+        
+        &:hover {
+        text-decoration: underline;
+      }
+      }
+      // @media(min-width: 900px){
+      //   margin-left: 4rem;
+      // }
+
+      label {
+        cursor: pointer;
+      }
+      
+      .toggle-submenu-input {
+        display: none;
+      }
+
+      .toggle-submenu-input:checked ~ .toggle-links {
+        display: block;
+        transform: scale(1, 1);
+        transition: scale 1s ease-in-out;
+      }
+
+      @media(min-width: 768px){
+          .product:checked ~ #product {
+          }
+          .product:checked ~ #company {
+          }
+        }
+
+      .toggle-submenu-input:checked ~ .toggle-submenu-label .toggle-arrow img{
+        transform: rotate(180deg) scale(1.3);
+      }
+
+      .toggle-arrow {
+        cursor: pointer;
+
+        .arrow-input {
+          display: none;
+        }
+
+        .arrow-light {
+          display: none;
+
+          @media(min-width: 768px){
+            display: inline;
+            margin-left: 0.2rem;
+            transform: scale(1.3);
+            }
+        }
+
+        .arrow-dark {
+          margin-left: 0.2rem;
+          transform: scale(1.3);
+
+          @media(min-width: 768px){
+            display: none;
+          }
+        }
+      }
+    }
+
+    .toggle-links {
+      font-size: 1rem;
+      // font-weight: normal;
+      display: none;
+      background-color: lighten($color-grayish-blue, 10%);
+      color: darken($color-grayish-blue, 40%);
+      margin: 1rem 2rem;
+      padding: 0.5rem 0;
+      border-radius: 0.5rem;
+
+      @media(min-width: 768px){
+        position: absolute;
+        padding: 1rem 2rem;
+        background: $color-white;
+      }
+
+      li {
+        margin: 0.5rem 0;
+
+        @media(min-width: 768px){
+          font-weight: normal;
+
+          &:hover {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .signup {
+
+      a {
+      background: $gradient-linear-red-two;
+      color: $color-white;
+      padding: 0.45em 1.85em;
+      border-radius: 2rem;
+
+        @media(min-width: 768px){
+          color: $color-light-red;
+          background: $color-white;
+
+          &:hover {
+            color: $color-white;
+            background: lighten($color-light-red, 12.5%);
+          }
+        }
+      }
+    }
+
+    .line {
+      margin: rem 0;
+      border-bottom: 1px solid $color-grayish-blue;
+      position: relative;
+      width: 90%;
+      left: 5%;
+
+    @media(min-width: 768px){
+      display: none;  
+    }
+
+    }
+  }
+}
+
+
+.hero {
+  z-index: 99;
+  padding: 3rem 0;
+  font-family: $font-overpass;
+  color: $color-white;
+  text-align: center;
+  position: relative;
+
+  @media (min-width: 768px){}
+
+  h1 {
+
+    @media(min-width: 768px){
+      font-size: 2.5rem;
+    }
+
+    @media(min-width: 1050px){
+      font-size: 3.5rem;
+    }
+  }
+
+  p {
+    padding: 1rem 2rem;
+    letter-spacing: 1px;
+
+
+    @media(min-width: 768px){
+      font-size: 1.3rem;
+    }
+
+    @media(min-width: 1050px){
+      font-size: 1.5rem;
+    }
+
+  }
+
+  &_cta {
+    margin: 2rem 0;
+
+    button {
+      font-family: inherit;
+      margin: 1rem;
+      padding: 0.5em 1em;
+      border-radius: 2rem;
+      border: none;
+      font-weight: bold;
+      font-size: 1rem;
+
+    @media(min-width: 768px){
+      font-size: 1.1rem;
+    }
+
+    @media(min-width: 1050px){
+      font-size: 1.3rem;
+    }
+
+    }
+
+    .start {
+      background-color: $color-white;
+      color: $color-light-red;
+
+      &:hover {
+        color: $color-white;
+        background-color: lighten($color-light-red, 12.5%);
+        transition: background-color 200ms ease-in-out;
+      }
+    }
+
+    .learn {
+      color: $color-white;
+      border: 1.5px solid $color-white;
+      background: none;
+
+      &:hover {
+        color: $color-very-light-red;
+        background-color: $color-white;
+        transition: background-color 200ms ease-in-out;
+      }
+    }
+  }
+}

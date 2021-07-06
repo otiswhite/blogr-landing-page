@@ -1,0 +1,49 @@
+/* FOOTER */ 
+
+.footer {
+  background: $color-very-dark-black-blue;
+  color: $color-white;
+  font-family: $font-overpass;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  border-top-right-radius: 6rem;
+  letter-spacing: 1px;
+  // transform: translateY(-20%);
+
+  
+
+  &_logo {
+    padding: 2rem 0;
+  }
+
+  &_links {
+
+    @media(min-width: 768px){
+      display: flex;
+      justify-content: space-evenly;
+    }
+
+    &-title {
+      font-family: $font-ubuntu;
+      font-weight: bold;
+      margin: 2rem 0;
+      letter-spacing: 3px;
+    }
+
+    ul {
+      margin: 1rem 0;
+    }
+
+    li {
+      font-family: $font-overpass;
+      font-weight: lighter;
+      letter-spacing: 1px;
+    }
+
+    li:hover {
+      text-decoration: underline;
+    }
+  }
+
+}
